@@ -1,0 +1,11 @@
+C:\Users\joaog\Desktop\academia-programador\locadora-de-automoveis\server\infraestrutura\logging\bin\Debug\net9.0\LocadoraDeAutomoveis.Infraestrutura.Logging.deps.json
+C:\Users\joaog\Desktop\academia-programador\locadora-de-automoveis\server\infraestrutura\logging\bin\Debug\net9.0\LocadoraDeAutomoveis.Infraestrutura.Logging.dll
+C:\Users\joaog\Desktop\academia-programador\locadora-de-automoveis\server\infraestrutura\logging\bin\Debug\net9.0\LocadoraDeAutomoveis.Infraestrutura.Logging.pdb
+C:\Users\joaog\Desktop\academia-programador\locadora-de-automoveis\server\infraestrutura\logging\obj\Debug\net9.0\LocadoraDeAutomoveis.Infraestrutura.Logging.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\joaog\Desktop\academia-programador\locadora-de-automoveis\server\infraestrutura\logging\obj\Debug\net9.0\LocadoraDeAutomoveis.Infraestrutura.Logging.AssemblyInfoInputs.cache
+C:\Users\joaog\Desktop\academia-programador\locadora-de-automoveis\server\infraestrutura\logging\obj\Debug\net9.0\LocadoraDeAutomoveis.Infraestrutura.Logging.AssemblyInfo.cs
+C:\Users\joaog\Desktop\academia-programador\locadora-de-automoveis\server\infraestrutura\logging\obj\Debug\net9.0\LocadoraDeAutomoveis.Infraestrutura.Logging.csproj.CoreCompileInputs.cache
+C:\Users\joaog\Desktop\academia-programador\locadora-de-automoveis\server\infraestrutura\logging\obj\Debug\net9.0\LocadoraDeAutomoveis.Infraestrutura.Logging.dll
+C:\Users\joaog\Desktop\academia-programador\locadora-de-automoveis\server\infraestrutura\logging\obj\Debug\net9.0\refint\LocadoraDeAutomoveis.Infraestrutura.Logging.dll
+C:\Users\joaog\Desktop\academia-programador\locadora-de-automoveis\server\infraestrutura\logging\obj\Debug\net9.0\LocadoraDeAutomoveis.Infraestrutura.Logging.pdb
+C:\Users\joaog\Desktop\academia-programador\locadora-de-automoveis\server\infraestrutura\logging\obj\Debug\net9.0\ref\LocadoraDeAutomoveis.Infraestrutura.Logging.dll

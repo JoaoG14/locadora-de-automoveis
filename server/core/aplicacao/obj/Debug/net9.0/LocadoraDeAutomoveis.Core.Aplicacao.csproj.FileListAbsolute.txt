@@ -1,0 +1,15 @@
+C:\Users\joaog\Desktop\academia-programador\locadora-de-automoveis\server\core\aplicacao\obj\Debug\net9.0\LocadoraDeAutomoveis.Core.Aplicacao.csproj.AssemblyReference.cache
+C:\Users\joaog\Desktop\academia-programador\locadora-de-automoveis\server\core\aplicacao\obj\Debug\net9.0\LocadoraDeAutomoveis.Core.Aplicacao.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\joaog\Desktop\academia-programador\locadora-de-automoveis\server\core\aplicacao\obj\Debug\net9.0\LocadoraDeAutomoveis.Core.Aplicacao.AssemblyInfoInputs.cache
+C:\Users\joaog\Desktop\academia-programador\locadora-de-automoveis\server\core\aplicacao\obj\Debug\net9.0\LocadoraDeAutomoveis.Core.Aplicacao.AssemblyInfo.cs
+C:\Users\joaog\Desktop\academia-programador\locadora-de-automoveis\server\core\aplicacao\obj\Debug\net9.0\LocadoraDeAutomoveis.Core.Aplicacao.csproj.CoreCompileInputs.cache
+C:\Users\joaog\Desktop\academia-programador\locadora-de-automoveis\server\core\aplicacao\bin\Debug\net9.0\LocadoraDeAutomoveis.Core.Aplicacao.deps.json
+C:\Users\joaog\Desktop\academia-programador\locadora-de-automoveis\server\core\aplicacao\bin\Debug\net9.0\LocadoraDeAutomoveis.Core.Aplicacao.dll
+C:\Users\joaog\Desktop\academia-programador\locadora-de-automoveis\server\core\aplicacao\bin\Debug\net9.0\LocadoraDeAutomoveis.Core.Aplicacao.pdb
+C:\Users\joaog\Desktop\academia-programador\locadora-de-automoveis\server\core\aplicacao\bin\Debug\net9.0\LocadoraDeAutomoveis.Core.Dominio.dll
+C:\Users\joaog\Desktop\academia-programador\locadora-de-automoveis\server\core\aplicacao\bin\Debug\net9.0\LocadoraDeAutomoveis.Core.Dominio.pdb
+C:\Users\joaog\Desktop\academia-programador\locadora-de-automoveis\server\core\aplicacao\obj\Debug\net9.0\Locadora.8F0753FA.Up2Date
+C:\Users\joaog\Desktop\academia-programador\locadora-de-automoveis\server\core\aplicacao\obj\Debug\net9.0\LocadoraDeAutomoveis.Core.Aplicacao.dll
+C:\Users\joaog\Desktop\academia-programador\locadora-de-automoveis\server\core\aplicacao\obj\Debug\net9.0\refint\LocadoraDeAutomoveis.Core.Aplicacao.dll
+C:\Users\joaog\Desktop\academia-programador\locadora-de-automoveis\server\core\aplicacao\obj\Debug\net9.0\LocadoraDeAutomoveis.Core.Aplicacao.pdb
+C:\Users\joaog\Desktop\academia-programador\locadora-de-automoveis\server\core\aplicacao\obj\Debug\net9.0\ref\LocadoraDeAutomoveis.Core.Aplicacao.dll
