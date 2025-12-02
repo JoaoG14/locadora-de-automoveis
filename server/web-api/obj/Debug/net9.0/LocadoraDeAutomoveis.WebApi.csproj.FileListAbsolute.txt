@@ -178,3 +178,4 @@ C:\Users\joaog\Desktop\academia-programador\locadora-de-automoveis\server\web-ap
 C:\Users\joaog\Desktop\academia-programador\locadora-de-automoveis\server\web-api\obj\Debug\net9.0\LocadoraDeAutomoveis.WebApi.pdb
 C:\Users\joaog\Desktop\academia-programador\locadora-de-automoveis\server\web-api\obj\Debug\net9.0\LocadoraDeAutomoveis.WebApi.genruntimeconfig.cache
 C:\Users\joaog\Desktop\academia-programador\locadora-de-automoveis\server\web-api\obj\Debug\net9.0\ref\LocadoraDeAutomoveis.WebApi.dll
+C:\Users\joaog\Desktop\academia-programador\locadora-de-automoveis\server\web-api\obj\Debug\net9.0\LocadoraDeAutomoveis.WebApi.sourcelink.json

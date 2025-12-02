@@ -10,3 +10,4 @@ C:\Users\joaog\Desktop\academia-programador\locadora-de-automoveis\server\core\d
 C:\Users\joaog\Desktop\academia-programador\locadora-de-automoveis\server\core\dominio\obj\Debug\net9.0\refint\LocadoraDeAutomoveis.Core.Dominio.dll
 C:\Users\joaog\Desktop\academia-programador\locadora-de-automoveis\server\core\dominio\obj\Debug\net9.0\LocadoraDeAutomoveis.Core.Dominio.pdb
 C:\Users\joaog\Desktop\academia-programador\locadora-de-automoveis\server\core\dominio\obj\Debug\net9.0\ref\LocadoraDeAutomoveis.Core.Dominio.dll
+C:\Users\joaog\Desktop\academia-programador\locadora-de-automoveis\server\core\dominio\obj\Debug\net9.0\LocadoraDeAutomoveis.Core.Dominio.sourcelink.json

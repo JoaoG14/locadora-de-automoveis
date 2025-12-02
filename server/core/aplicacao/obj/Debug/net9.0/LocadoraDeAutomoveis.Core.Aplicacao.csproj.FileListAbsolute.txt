@@ -13,3 +13,4 @@ C:\Users\joaog\Desktop\academia-programador\locadora-de-automoveis\server\core\a
 C:\Users\joaog\Desktop\academia-programador\locadora-de-automoveis\server\core\aplicacao\obj\Debug\net9.0\refint\LocadoraDeAutomoveis.Core.Aplicacao.dll
 C:\Users\joaog\Desktop\academia-programador\locadora-de-automoveis\server\core\aplicacao\obj\Debug\net9.0\LocadoraDeAutomoveis.Core.Aplicacao.pdb
 C:\Users\joaog\Desktop\academia-programador\locadora-de-automoveis\server\core\aplicacao\obj\Debug\net9.0\ref\LocadoraDeAutomoveis.Core.Aplicacao.dll
+C:\Users\joaog\Desktop\academia-programador\locadora-de-automoveis\server\core\aplicacao\obj\Debug\net9.0\LocadoraDeAutomoveis.Core.Aplicacao.sourcelink.json

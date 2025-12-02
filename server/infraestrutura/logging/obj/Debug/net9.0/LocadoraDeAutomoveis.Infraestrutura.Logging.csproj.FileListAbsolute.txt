@@ -9,3 +9,4 @@ C:\Users\joaog\Desktop\academia-programador\locadora-de-automoveis\server\infrae
 C:\Users\joaog\Desktop\academia-programador\locadora-de-automoveis\server\infraestrutura\logging\obj\Debug\net9.0\refint\LocadoraDeAutomoveis.Infraestrutura.Logging.dll
 C:\Users\joaog\Desktop\academia-programador\locadora-de-automoveis\server\infraestrutura\logging\obj\Debug\net9.0\LocadoraDeAutomoveis.Infraestrutura.Logging.pdb
 C:\Users\joaog\Desktop\academia-programador\locadora-de-automoveis\server\infraestrutura\logging\obj\Debug\net9.0\ref\LocadoraDeAutomoveis.Infraestrutura.Logging.dll
+C:\Users\joaog\Desktop\academia-programador\locadora-de-automoveis\server\infraestrutura\logging\obj\Debug\net9.0\LocadoraDeAutomoveis.Infraestrutura.Logging.sourcelink.json

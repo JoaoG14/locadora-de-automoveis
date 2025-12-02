@@ -15,3 +15,4 @@ C:\Users\joaog\Desktop\academia-programador\locadora-de-automoveis\server\infrae
 C:\Users\joaog\Desktop\academia-programador\locadora-de-automoveis\server\infraestrutura\orm\obj\Debug\net9.0\LocadoraDeAutomoveis.Infraestrutura.Orm.pdb
 C:\Users\joaog\Desktop\academia-programador\locadora-de-automoveis\server\infraestrutura\orm\obj\Debug\net9.0\LocadoraDeAutomoveis.Infraestrutura.Orm.genruntimeconfig.cache
 C:\Users\joaog\Desktop\academia-programador\locadora-de-automoveis\server\infraestrutura\orm\obj\Debug\net9.0\ref\LocadoraDeAutomoveis.Infraestrutura.Orm.dll
+C:\Users\joaog\Desktop\academia-programador\locadora-de-automoveis\server\infraestrutura\orm\obj\Debug\net9.0\LocadoraDeAutomoveis.Infraestrutura.Orm.sourcelink.json
