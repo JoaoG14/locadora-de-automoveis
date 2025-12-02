@@ -1,4 +1,5 @@
 using LocadoraDeAutomoveis.Core.Dominio.Compartilhado;
+using LocadoraDeAutomoveis.Core.Dominio.ModuloCliente;
 
 namespace LocadoraDeAutomoveis.Core.Dominio.ModuloCondutor;
 
@@ -11,6 +12,7 @@ public class Condutor : EntidadeBase<Condutor>
     public DateTime ValidadeCNH { get; set; }
     public string Telefone { get; set; } = string.Empty;
     public Guid? ClienteId { get; set; } // Opcional, para vincular a PJ
+    public virtual Cliente? Cliente { get; set; }
 
     public Condutor() { }
 
