@@ -1,4 +1,5 @@
 using LocadoraDeAutomoveis.Core.Dominio.Compartilhado;
+using LocadoraDeAutomoveis.Core.Dominio.ModuloGrupoVeiculo;
 
 namespace LocadoraDeAutomoveis.Core.Dominio.ModuloVeiculo;
 
@@ -13,6 +14,7 @@ public class Veiculo : EntidadeBase<Veiculo>
     public int Ano { get; set; }
     public byte[]? Foto { get; set; }
     public Guid GrupoVeiculoId { get; set; }
+    public virtual GrupoVeiculo? GrupoVeiculo { get; set; }
 
     public Veiculo() { }
 
