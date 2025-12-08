@@ -17,10 +17,18 @@ public class AuthController : ControllerBase
     [HttpPost("registrar")]
     public async Task<IActionResult> Registrar(RegistrarUsuarioViewModel viewModel)
     {
+        Console.WriteLine($"[Registrar] Recebido: Nome='{viewModel.Nome}', Email='{viewModel.Email}', Senha='{viewModel.Senha}'");
+
         var resultado = await _authService.RegistrarAsync(viewModel);
 
         if (resultado.IsFailed)
+        {
+            foreach (var error in resultado.Errors)
+            {
+                Console.WriteLine($"[Registrar] Erro: {error.Message}");
+            }
             return BadRequest(resultado.Errors.Select(e => e.Message));
+        }
 
         return Ok(resultado.Value);
     }
