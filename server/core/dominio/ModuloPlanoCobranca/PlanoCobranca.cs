@@ -1,10 +1,12 @@
 using LocadoraDeAutomoveis.Core.Dominio.Compartilhado;
+using LocadoraDeAutomoveis.Core.Dominio.ModuloGrupoVeiculo;
 
 namespace LocadoraDeAutomoveis.Core.Dominio.ModuloPlanoCobranca;
 
 public class PlanoCobranca : EntidadeBase<PlanoCobranca>
 {
     public Guid GrupoVeiculoId { get; set; }
+    public virtual GrupoVeiculo? GrupoVeiculo { get; set; }
     
     // Plano Diário
     public decimal PrecoDiarioPlanoDiario { get; set; }

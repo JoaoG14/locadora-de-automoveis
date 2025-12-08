@@ -9,7 +9,6 @@ using LocadoraDeAutomoveis.Core.Dominio.ModuloCondutor;
 using LocadoraDeAutomoveis.Core.Dominio.ModuloTaxaServico;
 using LocadoraDeAutomoveis.Core.Dominio.ModuloAluguel;
 using LocadoraDeAutomoveis.Core.Dominio.ModuloConfiguracao;
-using LocadoraDeAutomoveis.Core.Dominio.ModuloParceiro;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
@@ -30,8 +29,6 @@ public class LocadoraDbContext : IdentityDbContext<Usuario, Cargo, Guid>, IUnitO
     public DbSet<TaxaServico> TaxasServicos { get; set; }
     public DbSet<Aluguel> Alugueis { get; set; }
     public DbSet<Configuracao> Configuracoes { get; set; }
-    public DbSet<Parceiro> Parceiros { get; set; }
-    public DbSet<Cupom> Cupons { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -45,8 +42,6 @@ public class LocadoraDbContext : IdentityDbContext<Usuario, Cargo, Guid>, IUnitO
         modelBuilder.Entity<TaxaServico>().HasQueryFilter(x => !x.Excluido);
         modelBuilder.Entity<Aluguel>().HasQueryFilter(x => !x.Excluido);
         modelBuilder.Entity<Configuracao>().HasQueryFilter(x => !x.Excluido);
-        modelBuilder.Entity<Parceiro>().HasQueryFilter(x => !x.Excluido);
-        modelBuilder.Entity<Cupom>().HasQueryFilter(x => !x.Excluido);
 
         var assembly = typeof(LocadoraDbContext).Assembly;
         modelBuilder.ApplyConfigurationsFromAssembly(assembly);
