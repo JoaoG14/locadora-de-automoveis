@@ -43,6 +43,11 @@ export class ShellComponent {
   public itensNavbar = [
     { titulo: 'Início', icone: 'home', link: '/inicio' },
     { titulo: 'Funcionários', icone: 'badge', link: '/funcionarios' },
+    {
+      titulo: 'Grupos de Veículos',
+      icone: 'directions_car',
+      link: '/grupo-veiculos',
+    },
   ];
 
   @Input({ required: true }) usuarioAutenticado?: UsuarioAutenticadoModel;
