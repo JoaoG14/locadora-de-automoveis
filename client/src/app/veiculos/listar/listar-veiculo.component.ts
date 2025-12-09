@@ -40,7 +40,7 @@ import { ListarGrupoVeiculoViewModel } from '../../grupo-veiculos/grupo-veiculo.
           <a
             mat-flat-button
             class="flex items-center justify-center gap-2 h-10 w-full md:w-auto"
-            routerLink="cadastrar"
+            routerLink="../cadastrar"
           >
             <mat-icon class="!text-base">add</mat-icon>
             Novo Veículo

@@ -76,7 +76,7 @@ import { GrupoVeiculoService } from '../../grupo-veiculos/grupo-veiculo.service'
 
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
             <!-- Grupo -->
-            <mat-form-field appearance="outline" class="w-full">
+            <mat-form-field class="w-full">
               <mat-label>Grupo de Automóveis</mat-label>
               <mat-select formControlName="grupoVeiculoId">
                 @for (grupo of grupos$ | async; track $index) {
@@ -89,28 +89,28 @@ import { GrupoVeiculoService } from '../../grupo-veiculos/grupo-veiculo.service'
             </mat-form-field>
 
             <!-- Modelo -->
-            <mat-form-field appearance="outline" class="w-full">
+            <mat-form-field class="w-full">
               <mat-label>Modelo</mat-label>
               <input matInput formControlName="modelo" placeholder="Ex: Corolla XEi" />
               <mat-error *ngIf="modelo?.hasError('required')">O modelo é obrigatório</mat-error>
             </mat-form-field>
 
             <!-- Marca -->
-            <mat-form-field appearance="outline" class="w-full">
+            <mat-form-field class="w-full">
               <mat-label>Marca</mat-label>
               <input matInput formControlName="marca" placeholder="Ex: Toyota" />
               <mat-error *ngIf="marca?.hasError('required')">A marca é obrigatória</mat-error>
             </mat-form-field>
 
             <!-- Cor -->
-            <mat-form-field appearance="outline" class="w-full">
+            <mat-form-field class="w-full">
               <mat-label>Cor</mat-label>
               <input matInput formControlName="cor" placeholder="Ex: Preto" />
               <mat-error *ngIf="cor?.hasError('required')">A cor é obrigatória</mat-error>
             </mat-form-field>
 
             <!-- Tipo Combustível -->
-            <mat-form-field appearance="outline" class="w-full">
+            <mat-form-field class="w-full">
               <mat-label>Tipo de Combustível</mat-label>
               <mat-select formControlName="tipoCombustivel">
                 @for (tipo of tiposCombustivel; track $index) {
@@ -123,7 +123,7 @@ import { GrupoVeiculoService } from '../../grupo-veiculos/grupo-veiculo.service'
             </mat-form-field>
 
             <!-- Capacidade -->
-            <mat-form-field appearance="outline" class="w-full">
+            <mat-form-field class="w-full">
               <mat-label>Capacidade em Litros</mat-label>
               <input
                 matInput
@@ -138,7 +138,7 @@ import { GrupoVeiculoService } from '../../grupo-veiculos/grupo-veiculo.service'
             </mat-form-field>
 
             <!-- Ano -->
-            <mat-form-field appearance="outline" class="w-full">
+            <mat-form-field class="w-full">
               <mat-label>Ano</mat-label>
               <input matInput type="number" formControlName="ano" placeholder="Ex: 2024" />
               <mat-error *ngIf="ano?.hasError('required')">O ano é obrigatório</mat-error>
@@ -146,7 +146,7 @@ import { GrupoVeiculoService } from '../../grupo-veiculos/grupo-veiculo.service'
             </mat-form-field>
 
             <!-- Placa -->
-            <mat-form-field appearance="outline" class="w-full">
+            <mat-form-field class="w-full">
               <mat-label>Placa</mat-label>
               <input matInput formControlName="placa" placeholder="Ex: ABC-1234" />
               <mat-error *ngIf="placa?.hasError('required')">A placa é obrigatória</mat-error>

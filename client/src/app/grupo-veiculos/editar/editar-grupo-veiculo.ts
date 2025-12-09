@@ -35,7 +35,7 @@ import { GrupoVeiculoService } from '../grupo-veiculo.service';
 
         <mat-card-content class="flex flex-col gap-2">
           @if (grupo$ | async; as grupo) {
-            <mat-form-field appearance="outline" class="w-full">
+            <mat-form-field class="w-full">
               <mat-label>Nome</mat-label>
               <input matInput formControlName="nome" />
               <mat-error *ngIf="nome?.hasError('required')">O nome é obrigatório</mat-error>
