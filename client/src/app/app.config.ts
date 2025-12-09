@@ -13,6 +13,7 @@ import { CanActivateFn, provideRouter, Router, Routes } from '@angular/router';
 import { provideAuth } from './auth/auth.provider';
 import { AuthService } from './auth/auth.service';
 import { GrupoVeiculoService } from './grupo-veiculos/grupo-veiculo.service';
+import { VeiculoService } from './veiculos/veiculo.service';
 import { provideNotifications } from './shared/notificacao/notificacao.provider';
 
 const usuarioDesconhecidoGuard: CanActivateFn = () => {
@@ -48,6 +49,12 @@ const routes: Routes = [
       import('./grupo-veiculos/grupo-veiculo.routes').then((m) => m.grupoVeiculoRoutes),
     canActivate: [usuarioAutenticadoGuard],
     providers: [GrupoVeiculoService],
+  },
+  {
+    path: 'veiculos',
+    loadChildren: () => import('./veiculos/veiculo.routes').then((m) => m.veiculoRoutes),
+    canActivate: [usuarioAutenticadoGuard],
+    providers: [VeiculoService],
   },
   {
     path: 'funcionarios',

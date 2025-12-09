@@ -48,6 +48,11 @@ export class ShellComponent {
       icone: 'directions_car',
       link: '/grupo-veiculos',
     },
+    {
+      titulo: 'Veículos',
+      icone: 'directions_car',
+      link: '/veiculos',
+    },
   ];
 
   @Input({ required: true }) usuarioAutenticado?: UsuarioAutenticadoModel;
