@@ -1,4 +1,4 @@
-import { AsyncPipe, NgIf } from '@angular/common';
+import { NgIf } from '@angular/common';
 import { Component, inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
@@ -28,7 +28,6 @@ import { ClienteService } from '../cliente.service';
     MatRadioModule,
     RouterLink,
     ReactiveFormsModule,
-    AsyncPipe,
     NgIf,
   ],
   template: `

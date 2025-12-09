@@ -1,4 +1,4 @@
-import { AsyncPipe, NgIf } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
@@ -20,7 +20,6 @@ import { ClienteViewModel, TipoCliente } from '../cliente.models';
     MatTooltipModule,
     RouterLink,
     AsyncPipe,
-    NgIf,
   ],
   template: `
     <section class="mx-auto max-w-screen-xl px-4">

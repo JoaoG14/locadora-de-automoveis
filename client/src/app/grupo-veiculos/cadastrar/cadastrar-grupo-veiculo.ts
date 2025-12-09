@@ -1,3 +1,4 @@
+import { NgIf } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
@@ -22,6 +23,7 @@ import { GrupoVeiculoService } from '../grupo-veiculo.service';
     MatInputModule,
     RouterLink,
     ReactiveFormsModule,
+    NgIf,
   ],
   template: `
     <form [formGroup]="form" (ngSubmit)="cadastrar()" class="mx-auto max-w-lg mt-6">

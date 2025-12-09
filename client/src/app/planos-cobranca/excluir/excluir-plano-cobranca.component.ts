@@ -13,7 +13,7 @@ import { PlanoCobrancaService } from '../plano-cobranca.service';
 @Component({
   selector: 'app-excluir-plano-cobranca',
   standalone: true,
-  imports: [MatCardModule, MatButtonModule, MatIconModule, RouterLink, AsyncPipe, NgIf],
+  imports: [MatCardModule, MatButtonModule, MatIconModule, RouterLink, AsyncPipe],
   template: `
     <div class="mx-auto max-w-lg mt-6">
       <mat-card class="p-6">
