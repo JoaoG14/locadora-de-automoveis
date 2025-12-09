@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LocadoraDeAutomoveis.Core.Dominio")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e3c24895f84011ddb1b518463cf95f91ae319172")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f97d79ebffbbdbb06df271da26c5481f96df04d9")]
 [assembly: System.Reflection.AssemblyProductAttribute("LocadoraDeAutomoveis.Core.Dominio")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LocadoraDeAutomoveis.Core.Dominio")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

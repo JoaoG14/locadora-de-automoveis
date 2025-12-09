@@ -14,6 +14,7 @@ import { provideAuth } from './auth/auth.provider';
 import { AuthService } from './auth/auth.service';
 import { GrupoVeiculoService } from './grupo-veiculos/grupo-veiculo.service';
 import { VeiculoService } from './veiculos/veiculo.service';
+import { PlanoCobrancaService } from './planos-cobranca/plano-cobranca.service';
 import { provideNotifications } from './shared/notificacao/notificacao.provider';
 
 const usuarioDesconhecidoGuard: CanActivateFn = () => {
@@ -55,6 +56,18 @@ const routes: Routes = [
     loadChildren: () => import('./veiculos/veiculo.routes').then((m) => m.veiculoRoutes),
     canActivate: [usuarioAutenticadoGuard],
     providers: [VeiculoService],
+  },
+  {
+    path: 'planos-cobranca',
+    loadChildren: () =>
+      import('./planos-cobranca/plano-cobranca.routes').then((m) => m.planoCobrancaRoutes),
+    canActivate: [usuarioAutenticadoGuard],
+    providers: [PlanoCobrancaService, GrupoVeiculoService],
+  },
+  {
+    path: 'clientes',
+    loadChildren: () => import('./clientes/cliente.routes').then((m) => m.clienteRoutes),
+    canActivate: [usuarioAutenticadoGuard],
   },
   {
     path: 'funcionarios',

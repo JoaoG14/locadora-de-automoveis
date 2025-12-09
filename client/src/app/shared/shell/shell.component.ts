@@ -42,6 +42,7 @@ export class ShellComponent {
 
   public itensNavbar = [
     { titulo: 'Início', icone: 'home', link: '/inicio' },
+    { titulo: 'Clientes', icone: 'people', link: '/clientes' },
     { titulo: 'Funcionários', icone: 'badge', link: '/funcionarios' },
     {
       titulo: 'Grupos de Veículos',
@@ -52,6 +53,11 @@ export class ShellComponent {
       titulo: 'Veículos',
       icone: 'directions_car',
       link: '/veiculos',
+    },
+    {
+      titulo: 'Planos de Cobrança',
+      icone: 'request_quote',
+      link: '/planos-cobranca',
     },
   ];
 
