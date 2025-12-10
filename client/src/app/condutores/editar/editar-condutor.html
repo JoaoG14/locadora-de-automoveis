@@ -26,7 +26,10 @@
 
             <!-- Cliente é condutor checkbox -->
             <div class="flex items-center">
-              <mat-checkbox [(ngModel)]="clienteECondutor" [ngModelOptions]="{ standalone: true }">
+              <mat-checkbox
+                [checked]="clienteECondutor"
+                (change)="clienteECondutor = !clienteECondutor"
+              >
                 Cliente é condutor
               </mat-checkbox>
             </div>
