@@ -120,7 +120,7 @@ import { ListarPlanoCobrancaViewModel } from '../plano-cobranca.models';
 
               <mat-card-actions class="p-2 border-t flex justify-end gap-2">
                 <a
-                  [routerLink]="['editar', item.plano.id]"
+                  [routerLink]="['../editar', item.plano.id]"
                   mat-icon-button
                   color="accent"
                   matTooltip="Editar"
@@ -128,7 +128,7 @@ import { ListarPlanoCobrancaViewModel } from '../plano-cobranca.models';
                   <mat-icon>edit</mat-icon>
                 </a>
                 <a
-                  [routerLink]="['excluir', item.plano.id]"
+                  [routerLink]="['../excluir', item.plano.id]"
                   mat-icon-button
                   color="warn"
                   matTooltip="Excluir"

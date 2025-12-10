@@ -7,7 +7,7 @@
       <a
         mat-flat-button
         class="col-span-1 flex items-center justify-center gap-2 h-10"
-        routerLink="cadastrar"
+        routerLink="../cadastrar"
       >
         <mat-icon class="!text-base">add</mat-icon>
         Cadastrar
@@ -34,10 +34,10 @@
           </mat-card-content>
 
           <mat-card-actions align="end" class="flex items-center justify-end gap-2 pt-2">
-            <a [routerLink]="['editar', funcionario.id]" mat-icon-button aria-label="Editar">
+            <a [routerLink]="['../editar', funcionario.id]" mat-icon-button aria-label="Editar">
               <mat-icon>edit</mat-icon>
             </a>
-            <a [routerLink]="['excluir', funcionario.id]" mat-icon-button aria-label="Excluir">
+            <a [routerLink]="['../excluir', funcionario.id]" mat-icon-button aria-label="Excluir">
               <mat-icon>delete</mat-icon>
             </a>
           </mat-card-actions>

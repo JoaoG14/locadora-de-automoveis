@@ -92,7 +92,7 @@ import { ClienteViewModel, TipoCliente } from '../cliente.models';
               </th>
               <td mat-cell *matCellDef="let cliente" class="text-right pr-4">
                 <a
-                  [routerLink]="['editar', cliente.id]"
+                  [routerLink]="['../editar', cliente.id]"
                   mat-icon-button
                   color="accent"
                   matTooltip="Editar"
@@ -100,7 +100,7 @@ import { ClienteViewModel, TipoCliente } from '../cliente.models';
                   <mat-icon>edit</mat-icon>
                 </a>
                 <a
-                  [routerLink]="['excluir', cliente.id]"
+                  [routerLink]="['../excluir', cliente.id]"
                   mat-icon-button
                   color="warn"
                   matTooltip="Excluir"

@@ -92,7 +92,7 @@ import { ListarGrupoVeiculoViewModel } from '../../grupo-veiculos/grupo-veiculo.
               <th mat-header-cell *matHeaderCellDef class="px-6 py-3 text-right">Ações</th>
               <td mat-cell *matCellDef="let row" class="px-6 py-4 text-right whitespace-nowrap">
                 <a
-                  [routerLink]="['editar', row.id]"
+                  [routerLink]="['../editar', row.id]"
                   mat-icon-button
                   color="accent"
                   matTooltip="Editar"
@@ -100,7 +100,7 @@ import { ListarGrupoVeiculoViewModel } from '../../grupo-veiculos/grupo-veiculo.
                   <mat-icon>edit</mat-icon>
                 </a>
                 <a
-                  [routerLink]="['excluir', row.id]"
+                  [routerLink]="['../excluir', row.id]"
                   mat-icon-button
                   color="warn"
                   matTooltip="Excluir"
