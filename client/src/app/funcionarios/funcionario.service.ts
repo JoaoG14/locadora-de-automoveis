@@ -1,3 +1,4 @@
+import { format } from 'date-fns';
 import { map, Observable } from 'rxjs';
 
 import { HttpClient } from '@angular/common/http';
@@ -50,7 +51,18 @@ export class FuncionarioService {
   public selecionarPorId(id: string): Observable<DetalhesFuncionarioModel> {
     const urlCompleto = `${this.apiUrl}/${id}`;
 
-    return this.http.get<DetalhesFuncionarioModel>(urlCompleto);
+    return this.http.get<any>(urlCompleto).pipe(
+      map((item) => ({
+        id: item.id,
+        nomeCompleto: item.nome || '',
+        cpf: '', // Backend doesn't store CPF
+        email: '', // Backend doesn't store email
+        salario: item.salario || 0,
+        admissaoEmUtc: item.dataAdmissao
+          ? format(new Date(item.dataAdmissao), 'dd/MM/yyyy')
+          : format(new Date(), 'dd/MM/yyyy'),
+      })),
+    );
   }
 
   public selecionarTodos(): Observable<SelecionarFuncionariosModel[]> {

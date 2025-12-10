@@ -7,7 +7,7 @@
       <a
         mat-flat-button
         class="col-span-1 flex items-center justify-center gap-2 h-10"
-        routerLink="../cadastrar"
+        routerLink="/taxas-servicos/cadastrar"
       >
         <mat-icon class="!text-base">add</mat-icon>
         Cadastrar
@@ -53,10 +53,10 @@
           </mat-card-content>
 
           <mat-card-actions align="end" class="flex items-center justify-end gap-2 pt-2">
-            <a [routerLink]="['../editar', taxaServico.id]" mat-icon-button aria-label="Editar">
+            <a [routerLink]="['/taxas-servicos/editar', taxaServico.id]" mat-icon-button aria-label="Editar">
               <mat-icon>edit</mat-icon>
             </a>
-            <a [routerLink]="['../excluir', taxaServico.id]" mat-icon-button aria-label="Excluir">
+            <a [routerLink]="['/taxas-servicos/excluir', taxaServico.id]" mat-icon-button aria-label="Excluir">
               <mat-icon>delete</mat-icon>
             </a>
           </mat-card-actions>
@@ -67,7 +67,7 @@
         >
           <mat-icon class="text-5xl mb-2 opacity-30">folder_off</mat-icon>
           <p class="text-lg">Nenhuma taxa ou serviço cadastrado.</p>
-          <a mat-button color="primary" routerLink="../cadastrar" class="mt-2">
+          <a mat-button color="primary" routerLink="/taxas-servicos/cadastrar" class="mt-2">
             Cadastre o primeiro
           </a>
         </div>

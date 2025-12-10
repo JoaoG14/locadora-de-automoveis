@@ -28,7 +28,7 @@ import { ClienteViewModel, TipoCliente } from '../cliente.models';
 
         <!-- Ações -->
         <div class="mt-4 flex justify-end">
-          <a mat-flat-button color="primary" class="h-10 px-6" routerLink="../cadastrar">
+          <a mat-flat-button color="primary" class="h-10 px-6" routerLink="/clientes/cadastrar">
             <mat-icon class="mr-2">add</mat-icon>
             Cadastrar
           </a>
@@ -92,7 +92,7 @@ import { ClienteViewModel, TipoCliente } from '../cliente.models';
               </th>
               <td mat-cell *matCellDef="let cliente" class="text-right pr-4">
                 <a
-                  [routerLink]="['../editar', cliente.id]"
+                  [routerLink]="['/clientes/editar', cliente.id]"
                   mat-icon-button
                   color="accent"
                   matTooltip="Editar"
@@ -100,7 +100,7 @@ import { ClienteViewModel, TipoCliente } from '../cliente.models';
                   <mat-icon>edit</mat-icon>
                 </a>
                 <a
-                  [routerLink]="['../excluir', cliente.id]"
+                  [routerLink]="['/clientes/excluir', cliente.id]"
                   mat-icon-button
                   color="warn"
                   matTooltip="Excluir"

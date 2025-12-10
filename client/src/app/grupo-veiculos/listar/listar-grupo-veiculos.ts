@@ -21,7 +21,7 @@ import { ListarGrupoVeiculoViewModel } from '../grupo-veiculo.models';
           <a
             mat-flat-button
             class="col-span-1 flex items-center justify-center gap-2 h-10"
-            routerLink="../cadastrar"
+            routerLink="/grupo-veiculos/cadastrar"
           >
             <mat-icon class="!text-base">add</mat-icon>
             Cadastrar
@@ -40,10 +40,10 @@ import { ListarGrupoVeiculoViewModel } from '../grupo-veiculo.models';
               </mat-card-header>
 
               <mat-card-actions align="end" class="flex items-center justify-end gap-2 pt-2">
-                <a [routerLink]="['../editar', grupo.id]" mat-icon-button aria-label="Editar">
+                <a [routerLink]="['/grupo-veiculos/editar', grupo.id]" mat-icon-button aria-label="Editar">
                   <mat-icon>edit</mat-icon>
                 </a>
-                <a [routerLink]="['../excluir', grupo.id]" mat-icon-button aria-label="Excluir">
+                <a [routerLink]="['/grupo-veiculos/excluir', grupo.id]" mat-icon-button aria-label="Excluir">
                   <mat-icon>delete</mat-icon>
                 </a>
               </mat-card-actions>

@@ -7,7 +7,7 @@
       <a
         mat-flat-button
         class="col-span-1 flex items-center justify-center gap-2 h-10"
-        routerLink="../cadastrar"
+        routerLink="/alugueis/cadastrar"
       >
         <mat-icon class="!text-base">add</mat-icon>
         Cadastrar
@@ -78,7 +78,7 @@
           <mat-card-actions align="end" class="flex items-center justify-end gap-2 pt-2">
             @if (!aluguel.concluido) {
               <a
-                [routerLink]="['../devolver', aluguel.id]"
+                [routerLink]="['/alugueis/devolver', aluguel.id]"
                 mat-icon-button
                 color="primary"
                 matTooltip="Devolver"
@@ -87,7 +87,7 @@
                 <mat-icon>assignment_return</mat-icon>
               </a>
               <a
-                [routerLink]="['../editar', aluguel.id]"
+                [routerLink]="['/alugueis/editar', aluguel.id]"
                 mat-icon-button
                 color="accent"
                 matTooltip="Editar"
@@ -98,7 +98,7 @@
             }
             @if (aluguel.concluido) {
               <a
-                [routerLink]="['../excluir', aluguel.id]"
+                [routerLink]="['/alugueis/excluir', aluguel.id]"
                 mat-icon-button
                 color="warn"
                 matTooltip="Excluir"
@@ -115,7 +115,7 @@
         >
           <mat-icon class="text-5xl mb-2 opacity-30">folder_off</mat-icon>
           <p class="text-lg">Nenhum aluguel cadastrado.</p>
-          <a mat-button color="primary" routerLink="../cadastrar" class="mt-2">
+          <a mat-button color="primary" routerLink="/alugueis/cadastrar" class="mt-2">
             Cadastre o primeiro
           </a>
         </div>

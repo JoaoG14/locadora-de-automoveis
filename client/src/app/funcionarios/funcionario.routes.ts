@@ -14,13 +14,13 @@ export const listarFuncionariosResolver = () => {
 };
 
 export const detalhesFuncionarioResolver = (route: ActivatedRouteSnapshot) => {
-  const medicoService = inject(FuncionarioService);
+  const funcionarioService = inject(FuncionarioService);
 
   if (!route.paramMap.get('id')) throw new Error('O parâmetro id não foi fornecido.');
 
-  const medicoId = route.paramMap.get('id')!;
+  const funcionarioId = route.paramMap.get('id')!;
 
-  return medicoService.selecionarPorId(medicoId);
+  return funcionarioService.selecionarPorId(funcionarioId);
 };
 
 export const funcionarioRoutes: Routes = [

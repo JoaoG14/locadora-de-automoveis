@@ -28,7 +28,7 @@ import { ListarPlanoCobrancaViewModel } from '../plano-cobranca.models';
 
         <!-- Ações -->
         <div class="mt-4 flex justify-end">
-          <a mat-flat-button color="primary" class="h-10 px-6" routerLink="../cadastrar">
+          <a mat-flat-button color="primary" class="h-10 px-6" routerLink="/planos-cobranca/cadastrar">
             <mat-icon class="mr-2">add</mat-icon>
             Cadastrar
           </a>
@@ -120,7 +120,7 @@ import { ListarPlanoCobrancaViewModel } from '../plano-cobranca.models';
 
               <mat-card-actions class="p-2 border-t flex justify-end gap-2">
                 <a
-                  [routerLink]="['../editar', item.plano.id]"
+                  [routerLink]="['/planos-cobranca/editar', item.plano.id]"
                   mat-icon-button
                   color="accent"
                   matTooltip="Editar"
@@ -128,7 +128,7 @@ import { ListarPlanoCobrancaViewModel } from '../plano-cobranca.models';
                   <mat-icon>edit</mat-icon>
                 </a>
                 <a
-                  [routerLink]="['../excluir', item.plano.id]"
+                  [routerLink]="['/planos-cobranca/excluir', item.plano.id]"
                   mat-icon-button
                   color="warn"
                   matTooltip="Excluir"
@@ -143,7 +143,7 @@ import { ListarPlanoCobrancaViewModel } from '../plano-cobranca.models';
             >
               <mat-icon class="text-5xl mb-2 opacity-30">folder_off</mat-icon>
               <p class="text-lg">Nenhum plano de cobrança cadastrado.</p>
-              <a mat-button color="primary" routerLink="../cadastrar" class="mt-2"
+              <a mat-button color="primary" routerLink="/planos-cobranca/cadastrar" class="mt-2"
                 >Cadastre o primeiro</a
               >
             </div>

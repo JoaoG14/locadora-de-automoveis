@@ -1,5 +1,5 @@
 import { AsyncPipe, NgIf } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
@@ -9,7 +9,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatTabsModule } from '@angular/material/tabs';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
-import { filter, map, switchMap, take, tap } from 'rxjs';
+import { filter, map, shareReplay, switchMap, take, tap } from 'rxjs';
 import { ListarGrupoVeiculoViewModel } from '../../grupo-veiculos/grupo-veiculo.models';
 import { NotificacaoService } from '../../shared/notificacao/notificacao.service';
 import {
@@ -197,7 +197,7 @@ import { PlanoCobrancaService } from '../plano-cobranca.service';
     </form>
   `,
 })
-export class EditarPlanoCobrancaComponent {
+export class EditarPlanoCobrancaComponent implements OnInit {
   protected readonly formBuilder = inject(FormBuilder);
   protected readonly router = inject(Router);
   protected readonly route = inject(ActivatedRoute);
@@ -212,6 +212,7 @@ export class EditarPlanoCobrancaComponent {
     filter((data) => data['plano']),
     map((data) => data['plano'] as ListarPlanoCobrancaViewModel),
     tap((plano) => this.form.patchValue(plano)),
+    shareReplay({ bufferSize: 1, refCount: true }),
   );
 
   protected form: FormGroup = this.formBuilder.group({
@@ -233,6 +234,11 @@ export class EditarPlanoCobrancaComponent {
 
   get grupoVeiculoId() {
     return this.form.get('grupoVeiculoId');
+  }
+
+  ngOnInit() {
+    // Subscribe to plano$ to trigger the tap operator that patches the form
+    this.plano$.subscribe();
   }
 
   public editar() {
