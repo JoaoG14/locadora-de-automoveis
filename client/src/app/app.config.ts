@@ -70,6 +70,11 @@ const routes: Routes = [
     canActivate: [usuarioAutenticadoGuard],
   },
   {
+    path: 'condutores',
+    loadChildren: () => import('./condutores/condutor.routes').then((m) => m.condutorRoutes),
+    canActivate: [usuarioAutenticadoGuard],
+  },
+  {
     path: 'funcionarios',
     loadChildren: () =>
       import('./funcionarios/funcionario.routes').then((r) => r.funcionarioRoutes),
