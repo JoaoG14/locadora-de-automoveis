@@ -28,7 +28,7 @@ import { ClienteViewModel, TipoCliente } from '../cliente.models';
 
         <!-- Ações -->
         <div class="mt-4 flex justify-end">
-          <a mat-flat-button color="primary" class="h-10 px-6" routerLink="cadastrar">
+          <a mat-flat-button color="primary" class="h-10 px-6" routerLink="../cadastrar">
             <mat-icon class="mr-2">add</mat-icon>
             Cadastrar
           </a>
