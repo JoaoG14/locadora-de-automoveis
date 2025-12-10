@@ -1,0 +1,163 @@
+<section class="mx-auto max-w-5xl px-4 py-6">
+  <div>
+    <h2 class="text-2xl font-semibold">Devolução de Aluguel</h2>
+    <hr class="my-4 border-muted/30" />
+
+    @if (aluguel) {
+      <mat-card class="p-4 rounded-2xl shadow-sm">
+        <form [formGroup]="devolucaoForm" (ngSubmit)="devolver()">
+          <mat-card-header>
+            <mat-card-title class="text-lg font-medium">
+              Registrar devolução do veículo
+            </mat-card-title>
+          </mat-card-header>
+
+          <mat-card-content class="mt-6 space-y-4">
+            <!-- Informações do Aluguel -->
+            <div class="bg-blue-50 border-l-4 border-blue-400 p-4 mb-4">
+              <div class="flex">
+                <div class="flex-shrink-0">
+                  <mat-icon class="text-blue-400">info</mat-icon>
+                </div>
+                <div class="ml-3 flex-1">
+                  <h3 class="text-sm font-medium text-blue-800">Informações do Aluguel</h3>
+                  <div class="mt-2 text-sm text-blue-700 grid grid-cols-2 gap-2">
+                    <div><strong>Condutor:</strong> {{ condutorNome }}</div>
+                    <div><strong>Veículo:</strong> {{ veiculoNome }}</div>
+                    <div><strong>Placa:</strong> {{ veiculoPlaca }}</div>
+                    <div>
+                      <strong>Plano:</strong> {{ getTipoPlanoLabel(aluguel.tipoPlanoSelecionado) }}
+                    </div>
+                    <div><strong>Saída:</strong> {{ aluguel.dataSaida | date: 'dd/MM/yyyy' }}</div>
+                    <div>
+                      <strong>Retorno Previsto:</strong>
+                      {{ aluguel.dataRetornoPrevista | date: 'dd/MM/yyyy' }}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Data de Retorno Efetiva -->
+            <mat-form-field class="w-full">
+              <mat-label>Data de Retorno Efetiva</mat-label>
+              <input
+                matInput
+                formControlName="dataRetornoEfetiva"
+                type="text"
+                mask="00/00/0000"
+                [dropSpecialCharacters]="false"
+                placeholder="dd/mm/aaaa"
+              />
+              @if (dataRetornoEfetiva?.errors?.['required']) {
+                <mat-error>A data de retorno é obrigatória.</mat-error>
+              }
+            </mat-form-field>
+
+            <!-- Estado do Veículo -->
+            <div class="border border-gray-200 rounded-lg p-4">
+              <h3 class="text-sm font-semibold text-gray-700 mb-3">Estado do Veículo</h3>
+
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <mat-form-field class="w-full">
+                  <mat-label>Km Inicial</mat-label>
+                  <input matInput [value]="aluguel.kmInicial" type="number" disabled />
+                </mat-form-field>
+
+                <mat-form-field class="w-full">
+                  <mat-label>Km Atual</mat-label>
+                  <input matInput formControlName="kmFinal" type="number" min="0" />
+                  @if (kmFinal?.errors?.['required']) {
+                    <mat-error>A quilometragem final é obrigatória.</mat-error>
+                  }
+                  @if (kmFinal?.errors?.['min']) {
+                    <mat-error
+                      >A quilometragem final deve ser maior ou igual à inicial ({{
+                        aluguel.kmInicial
+                      }}
+                      km).</mat-error
+                    >
+                  }
+                </mat-form-field>
+              </div>
+
+              <div class="mt-3">
+                <mat-checkbox formControlName="tanqueCheio"> Tanque Cheio </mat-checkbox>
+                <p class="text-xs text-gray-500 mt-1 ml-6">
+                  Marque esta opção se o veículo foi devolvido com o tanque cheio
+                </p>
+              </div>
+            </div>
+
+            <!-- Cálculo de Multa -->
+            @if (calcularMulta() > 0) {
+              <div class="bg-red-50 border-l-4 border-red-400 p-4">
+                <div class="flex">
+                  <div class="flex-shrink-0">
+                    <mat-icon class="text-red-400">warning</mat-icon>
+                  </div>
+                  <div class="ml-3">
+                    <h3 class="text-sm font-medium text-red-800">Atraso na Devolução</h3>
+                    <p class="text-sm text-red-700 mt-1">
+                      O veículo foi devolvido após a data prevista. Uma multa de 10% será aplicada.
+                    </p>
+                    <p class="text-sm font-bold text-red-700 mt-2">
+                      Valor da Multa: {{ calcularMulta() | currency: 'BRL' }}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            }
+
+            <!-- Resumo Financeiro -->
+            <div class="bg-gray-50 p-4 rounded-lg space-y-2">
+              <h3 class="text-sm font-semibold text-gray-700 mb-3">Resumo Financeiro</h3>
+
+              <div class="flex justify-between text-sm">
+                <span class="text-gray-600">Preço de Locação:</span>
+                <span class="font-medium">{{ aluguel.valorTotal | currency: 'BRL' }}</span>
+              </div>
+
+              @if (calcularMulta() > 0) {
+                <div class="flex justify-between text-sm">
+                  <span class="text-gray-600">Multa por Atraso (10%):</span>
+                  <span class="font-medium text-red-600">{{
+                    calcularMulta() | currency: 'BRL'
+                  }}</span>
+                </div>
+              }
+
+              <hr class="border-gray-300 my-2" />
+
+              <div class="flex justify-between items-center">
+                <span class="text-lg font-medium text-gray-700">Valor Final:</span>
+                <span class="text-2xl font-bold text-green-600">
+                  {{ calcularValorFinal() | currency: 'BRL' }}
+                </span>
+              </div>
+
+              <p class="text-xs text-gray-500 mt-2">
+                O valor final inclui o preço de locação, taxas de serviços e multas (se aplicável).
+              </p>
+            </div>
+          </mat-card-content>
+
+          <mat-card-actions align="end" class="flex items-center justify-end gap-3 pt-4">
+            <a mat-stroked-button routerLink="/alugueis" class="px-4"> Cancelar </a>
+
+            <button
+              type="submit"
+              [disabled]="devolucaoForm.invalid"
+              mat-flat-button
+              color="primary"
+              class="px-6"
+            >
+              <mat-icon class="!text-base mr-1">assignment_return</mat-icon>
+              Confirmar Devolução
+            </button>
+          </mat-card-actions>
+        </form>
+      </mat-card>
+    }
+  </div>
+</section>

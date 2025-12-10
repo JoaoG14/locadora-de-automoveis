@@ -65,6 +65,11 @@ export class ShellComponent {
       icone: 'local_offer',
       link: '/taxas-servicos',
     },
+    {
+      titulo: 'Aluguéis',
+      icone: 'car_rental',
+      link: '/alugueis',
+    },
   ];
 
   @Input({ required: true }) usuarioAutenticado?: UsuarioAutenticadoModel;

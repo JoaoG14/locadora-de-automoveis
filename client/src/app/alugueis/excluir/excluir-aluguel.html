@@ -1,0 +1,102 @@
+<section class="mx-auto max-w-4xl px-4 py-6">
+  <div>
+    <h2 class="text-2xl font-semibold">Excluir Aluguel</h2>
+    <hr class="my-4 border-muted/30" />
+
+    @if (aluguel) {
+      <mat-card class="p-4 rounded-2xl shadow-sm">
+        <mat-card-header>
+          <mat-card-title class="text-lg font-medium text-red-600">
+            <mat-icon class="align-middle mr-2">warning</mat-icon>
+            Confirmar Exclusão
+          </mat-card-title>
+        </mat-card-header>
+
+        <mat-card-content class="mt-6">
+          <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6">
+            <div class="flex">
+              <div class="flex-shrink-0">
+                <mat-icon class="text-yellow-400">info</mat-icon>
+              </div>
+              <div class="ml-3">
+                <p class="text-sm text-yellow-700">
+                  Você está prestes a excluir este aluguel. Esta ação não pode ser desfeita.
+                </p>
+                <p class="text-sm text-yellow-700 mt-2">
+                  <strong>Nota:</strong> Apenas aluguéis concluídos podem ser excluídos.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="space-y-4 bg-gray-50 p-4 rounded-lg">
+            <div class="flex justify-between items-start">
+              <div class="flex-1">
+                <h3 class="text-lg font-semibold text-gray-800">{{ condutorNome }}</h3>
+                <p class="text-sm text-gray-600 mt-1">{{ veiculoNome }}</p>
+                <div class="mt-2">
+                  <mat-chip class="!bg-green-100 !text-green-800 !text-xs !h-6">
+                    <mat-icon class="!text-sm mr-1">check_circle</mat-icon>
+                    Concluído
+                  </mat-chip>
+                </div>
+              </div>
+              <div class="text-right">
+                <p class="text-sm text-gray-500">Valor Total</p>
+                <p class="text-2xl font-bold text-primary">
+                  {{ aluguel.valorTotal | currency: 'BRL' }}
+                </p>
+              </div>
+            </div>
+
+            <hr class="border-gray-200" />
+
+            <div class="grid grid-cols-2 gap-4 text-sm">
+              <div>
+                <p class="text-gray-500">ID</p>
+                <p class="font-medium">{{ aluguel.id }}</p>
+              </div>
+              <div>
+                <p class="text-gray-500">Plano</p>
+                <p class="font-medium">{{ getTipoPlanoLabel(aluguel.tipoPlanoSelecionado) }}</p>
+              </div>
+              <div>
+                <p class="text-gray-500">Data de Saída</p>
+                <p class="font-medium">{{ aluguel.dataSaida | date: 'dd/MM/yyyy' }}</p>
+              </div>
+              <div>
+                <p class="text-gray-500">Data de Retorno</p>
+                <p class="font-medium">{{ aluguel.dataRetornoPrevista | date: 'dd/MM/yyyy' }}</p>
+              </div>
+              @if (aluguel.dataRetornoEfetiva) {
+                <div>
+                  <p class="text-gray-500">Retorno Efetivo</p>
+                  <p class="font-medium">{{ aluguel.dataRetornoEfetiva | date: 'dd/MM/yyyy' }}</p>
+                </div>
+              }
+              <div>
+                <p class="text-gray-500">Km Inicial</p>
+                <p class="font-medium">{{ aluguel.kmInicial }} km</p>
+              </div>
+              @if (aluguel.kmFinal) {
+                <div>
+                  <p class="text-gray-500">Km Final</p>
+                  <p class="font-medium">{{ aluguel.kmFinal }} km</p>
+                </div>
+              }
+            </div>
+          </div>
+        </mat-card-content>
+
+        <mat-card-actions align="end" class="flex items-center justify-end gap-3 pt-4">
+          <a mat-stroked-button routerLink="/alugueis" class="px-4"> Cancelar </a>
+
+          <button type="button" (click)="excluir()" mat-flat-button color="warn" class="px-6">
+            <mat-icon class="!text-base mr-1">delete</mat-icon>
+            Confirmar Exclusão
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    }
+  </div>
+</section>

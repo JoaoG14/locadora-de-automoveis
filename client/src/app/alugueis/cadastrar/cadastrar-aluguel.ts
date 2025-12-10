@@ -1,5 +1,6 @@
 import { Observer } from 'rxjs';
 import { format, parse } from 'date-fns';
+import { CurrencyPipe } from '@angular/common';
 
 import { Component, inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators, FormArray } from '@angular/forms';
@@ -37,6 +38,7 @@ import { ListarGrupoVeiculoViewModel } from '../../grupo-veiculos/grupo-veiculo.
     RouterLink,
     ReactiveFormsModule,
     NgxMaskDirective,
+    CurrencyPipe,
   ],
   templateUrl: './cadastrar-aluguel.html',
 })

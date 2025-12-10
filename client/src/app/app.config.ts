@@ -87,6 +87,11 @@ const routes: Routes = [
     canActivate: [usuarioAutenticadoGuard],
   },
   {
+    path: 'alugueis',
+    loadChildren: () => import('./alugueis/aluguel.routes').then((m) => m.aluguelRoutes),
+    canActivate: [usuarioAutenticadoGuard],
+  },
+  {
     path: 'inicio',
     loadComponent: () => import('./inicio/inicio').then((c) => c.Inicio),
     canMatch: [usuarioAutenticadoGuard],
