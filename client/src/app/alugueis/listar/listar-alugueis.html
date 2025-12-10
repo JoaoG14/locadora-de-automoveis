@@ -1,0 +1,125 @@
+<section class="mx-auto max-w-screen-xl px-4">
+  <div class="py-6">
+    <h2 class="text-2xl font-semibold">Aluguéis</h2>
+
+    <!-- Ações -->
+    <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-6 gap-2">
+      <a
+        mat-flat-button
+        class="col-span-1 flex items-center justify-center gap-2 h-10"
+        routerLink="../cadastrar"
+      >
+        <mat-icon class="!text-base">add</mat-icon>
+        Cadastrar
+      </a>
+    </div>
+
+    <hr class="my-6 border-muted/30" />
+
+    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+      @for (aluguel of dados$ | async; track aluguel.id) {
+        <mat-card class="p-3 rounded-2xl shadow-sm">
+          <mat-card-header class="pb-2">
+            <mat-card-title class="text-lg font-medium flex items-center justify-between">
+              <span>{{ aluguel.condutorNome }}</span>
+              @if (aluguel.concluido) {
+                <mat-chip class="!bg-green-100 !text-green-800 !text-xs !h-6">
+                  <mat-icon class="!text-sm mr-1">check_circle</mat-icon>
+                  Concluído
+                </mat-chip>
+              } @else {
+                <mat-chip class="!bg-blue-100 !text-blue-800 !text-xs !h-6">
+                  <mat-icon class="!text-sm mr-1">schedule</mat-icon>
+                  Em Andamento
+                </mat-chip>
+              }
+            </mat-card-title>
+          </mat-card-header>
+
+          <mat-card-content class="min-h-[120px] mt-3 space-y-2">
+            <div class="flex items-center gap-2 text-sm">
+              <mat-icon class="!text-base text-gray-500">directions_car</mat-icon>
+              <div>
+                <p class="font-medium">{{ aluguel.veiculoNome }}</p>
+                <p class="text-xs text-gray-500">{{ aluguel.veiculoPlaca }}</p>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-2 text-sm">
+              <mat-icon class="!text-base text-gray-500">request_quote</mat-icon>
+              <span
+                >Plano: <strong>{{ getTipoPlanoLabel(aluguel.tipoPlanoSelecionado) }}</strong></span
+              >
+            </div>
+
+            <div class="grid grid-cols-2 gap-2 text-xs mt-2">
+              <div>
+                <span class="block text-gray-500">Saída</span>
+                <span class="font-medium">{{ aluguel.dataSaida | date: 'dd/MM/yyyy' }}</span>
+              </div>
+              <div>
+                <span class="block text-gray-500">Retorno Previsto</span>
+                <span class="font-medium">{{
+                  aluguel.dataRetornoPrevista | date: 'dd/MM/yyyy'
+                }}</span>
+              </div>
+            </div>
+
+            <div class="mt-3 pt-3 border-t border-gray-200">
+              <div class="flex justify-between items-center">
+                <span class="text-sm text-gray-500">Valor Total</span>
+                <span class="text-xl font-bold text-primary">
+                  {{ aluguel.valorTotal | currency: 'BRL' }}
+                </span>
+              </div>
+            </div>
+          </mat-card-content>
+
+          <mat-card-actions align="end" class="flex items-center justify-end gap-2 pt-2">
+            @if (!aluguel.concluido) {
+              <a
+                [routerLink]="['../devolver', aluguel.id]"
+                mat-icon-button
+                color="primary"
+                matTooltip="Devolver"
+                aria-label="Devolver"
+              >
+                <mat-icon>assignment_return</mat-icon>
+              </a>
+              <a
+                [routerLink]="['../editar', aluguel.id]"
+                mat-icon-button
+                color="accent"
+                matTooltip="Editar"
+                aria-label="Editar"
+              >
+                <mat-icon>edit</mat-icon>
+              </a>
+            }
+            @if (aluguel.concluido) {
+              <a
+                [routerLink]="['../excluir', aluguel.id]"
+                mat-icon-button
+                color="warn"
+                matTooltip="Excluir"
+                aria-label="Excluir"
+              >
+                <mat-icon>delete</mat-icon>
+              </a>
+            }
+          </mat-card-actions>
+        </mat-card>
+      } @empty {
+        <div
+          class="col-span-full text-center py-12 text-gray-500 bg-gray-50 rounded-lg dashed border-2 border-gray-200"
+        >
+          <mat-icon class="text-5xl mb-2 opacity-30">folder_off</mat-icon>
+          <p class="text-lg">Nenhum aluguel cadastrado.</p>
+          <a mat-button color="primary" routerLink="../cadastrar" class="mt-2">
+            Cadastre o primeiro
+          </a>
+        </div>
+      }
+    </div>
+  </div>
+</section>
