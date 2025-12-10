@@ -3,7 +3,7 @@ import { format, parse } from 'date-fns';
 import { CurrencyPipe } from '@angular/common';
 
 import { Component, inject, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, ReactiveFormsModule, Validators, FormArray } from '@angular/forms';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators, FormArray, FormControl } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -190,6 +190,10 @@ export class EditarAluguel implements OnInit {
 
   get taxasSelecionadas() {
     return this.aluguelForm.get('taxasSelecionadas') as FormArray;
+  }
+
+  getTaxaControl(index: number): FormControl {
+    return this.taxasSelecionadas.at(index) as FormControl;
   }
 
   protected calcularValorTotal(): number {

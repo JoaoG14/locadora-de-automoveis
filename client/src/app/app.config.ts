@@ -92,6 +92,12 @@ const routes: Routes = [
     canActivate: [usuarioAutenticadoGuard],
   },
   {
+    path: 'configuracoes',
+    loadChildren: () =>
+      import('./configuracoes/configuracao.routes').then((m) => m.configuracaoRoutes),
+    canActivate: [usuarioAutenticadoGuard],
+  },
+  {
     path: 'inicio',
     loadComponent: () => import('./inicio/inicio').then((c) => c.Inicio),
     canMatch: [usuarioAutenticadoGuard],

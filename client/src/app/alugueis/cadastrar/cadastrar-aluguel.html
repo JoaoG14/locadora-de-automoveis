@@ -126,7 +126,7 @@
               <mat-tab label="Taxas Selecionadas">
                 <div class="py-4 space-y-2">
                   @for (taxa of taxasServicos; track taxa.id; let i = $index) {
-                    <mat-checkbox [formControl]="taxasSelecionadas.at(i)">
+                    <mat-checkbox [formControl]="getTaxaControl(i)">
                       {{ taxa.nome }} - {{ taxa.preco | currency: 'BRL' }}
                       @if (taxa.precoFixo) {
                         <span class="text-xs text-gray-500">(Fixo)</span>
