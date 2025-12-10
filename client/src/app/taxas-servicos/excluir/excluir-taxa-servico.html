@@ -1,0 +1,85 @@
+<section class="mx-auto max-w-4xl px-4 py-6">
+  <div>
+    <h2 class="text-2xl font-semibold">Excluir Taxa ou Serviço</h2>
+    <hr class="my-4 border-muted/30" />
+
+    @if (taxaServico) {
+      <mat-card class="p-4 rounded-2xl shadow-sm">
+        <mat-card-header>
+          <mat-card-title class="text-lg font-medium text-red-600">
+            <mat-icon class="align-middle mr-2">warning</mat-icon>
+            Confirmar Exclusão
+          </mat-card-title>
+        </mat-card-header>
+
+        <mat-card-content class="mt-6">
+          <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6">
+            <div class="flex">
+              <div class="flex-shrink-0">
+                <mat-icon class="text-yellow-400">info</mat-icon>
+              </div>
+              <div class="ml-3">
+                <p class="text-sm text-yellow-700">
+                  Você está prestes a excluir esta taxa/serviço. Esta ação não pode ser desfeita.
+                </p>
+                <p class="text-sm text-yellow-700 mt-2">
+                  <strong>Nota:</strong> Não é possível excluir uma taxa relacionada a um aluguel
+                  ainda não concluído.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="space-y-4 bg-gray-50 p-4 rounded-lg">
+            <div class="flex justify-between items-start">
+              <div class="flex-1">
+                <h3 class="text-lg font-semibold text-gray-800">{{ taxaServico.nome }}</h3>
+                <div class="mt-2 flex items-center gap-2">
+                  @if (taxaServico.precoFixo) {
+                    <mat-chip class="!bg-blue-100 !text-blue-800 !text-xs !h-6">
+                      <mat-icon class="!text-sm mr-1">attach_money</mat-icon>
+                      Preço Fixo
+                    </mat-chip>
+                  } @else {
+                    <mat-chip class="!bg-green-100 !text-green-800 !text-xs !h-6">
+                      <mat-icon class="!text-sm mr-1">calendar_today</mat-icon>
+                      Por Dia
+                    </mat-chip>
+                  }
+                </div>
+              </div>
+              <div class="text-right">
+                <p class="text-sm text-gray-500">Preço</p>
+                <p class="text-2xl font-bold text-primary">
+                  {{ taxaServico.preco | currency: 'BRL' }}
+                </p>
+              </div>
+            </div>
+
+            <hr class="border-gray-200" />
+
+            <div class="text-sm text-gray-600">
+              <p><strong>ID:</strong> {{ taxaServico.id }}</p>
+              <p class="mt-1">
+                @if (taxaServico.precoFixo) {
+                  <strong>Tipo:</strong> Valor único cobrado independente do período
+                } @else {
+                  <strong>Tipo:</strong> Valor cobrado por dia de aluguel
+                }
+              </p>
+            </div>
+          </div>
+        </mat-card-content>
+
+        <mat-card-actions align="end" class="flex items-center justify-end gap-3 pt-4">
+          <a mat-stroked-button routerLink="/taxas-servicos" class="px-4"> Cancelar </a>
+
+          <button type="button" (click)="excluir()" mat-flat-button color="warn" class="px-6">
+            <mat-icon class="!text-base mr-1">delete</mat-icon>
+            Confirmar Exclusão
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    }
+  </div>
+</section>

@@ -81,6 +81,12 @@ const routes: Routes = [
     canMatch: [usuarioAutenticadoGuard],
   },
   {
+    path: 'taxas-servicos',
+    loadChildren: () =>
+      import('./taxas-servicos/taxa-servico.routes').then((m) => m.taxaServicoRoutes),
+    canActivate: [usuarioAutenticadoGuard],
+  },
+  {
     path: 'inicio',
     loadComponent: () => import('./inicio/inicio').then((c) => c.Inicio),
     canMatch: [usuarioAutenticadoGuard],

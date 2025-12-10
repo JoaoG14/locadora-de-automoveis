@@ -1,0 +1,86 @@
+<section class="mx-auto max-w-4xl px-4 py-6">
+  <div>
+    <h2 class="text-2xl font-semibold">Editar Taxa ou Serviço</h2>
+    <hr class="my-4 border-muted/30" />
+
+    <mat-card class="p-4 rounded-2xl shadow-sm">
+      <form [formGroup]="taxaServicoForm" (ngSubmit)="editar()">
+        <mat-card-header>
+          <mat-card-title class="text-lg font-medium">
+            Atualize as informações da taxa ou serviço
+          </mat-card-title>
+        </mat-card-header>
+
+        <mat-card-content class="mt-6 space-y-4">
+          <mat-form-field class="w-full">
+            <mat-label>Nome</mat-label>
+            <input
+              matInput
+              formControlName="nome"
+              type="text"
+              placeholder="Ex: Seguro Total, GPS, Cadeirinha"
+            />
+
+            @if (nome?.errors?.['required']) {
+              <mat-error>O nome é obrigatório.</mat-error>
+            }
+            @if (nome?.errors?.['minlength']) {
+              <mat-error>O nome deve conter no mínimo 3 caracteres.</mat-error>
+            }
+          </mat-form-field>
+
+          <mat-form-field class="w-full">
+            <mat-label>Preço</mat-label>
+            <input
+              matInput
+              formControlName="preco"
+              type="number"
+              step="0.01"
+              min="0"
+              placeholder="0.00"
+            />
+            <span matTextPrefix>R$&nbsp;</span>
+
+            @if (preco?.errors?.['required']) {
+              <mat-error>O preço é obrigatório.</mat-error>
+            }
+            @if (preco?.errors?.['min']) {
+              <mat-error>O preço deve ser maior que zero.</mat-error>
+            }
+          </mat-form-field>
+
+          <div class="border border-gray-200 rounded-lg p-4">
+            <label class="block text-sm font-medium text-gray-700 mb-3">Plano de Cobrança</label>
+            <mat-radio-group formControlName="precoFixo" class="flex flex-col gap-3">
+              <mat-radio-button [value]="true" class="flex items-center">
+                <span class="ml-2">
+                  <strong>Preço Fixo</strong>
+                  <span class="block text-xs text-gray-500"
+                    >Valor único independente do período</span
+                  >
+                </span>
+              </mat-radio-button>
+              <mat-radio-button [value]="false" class="flex items-center">
+                <span class="ml-2">
+                  <strong>Cobrança Diária</strong>
+                  <span class="block text-xs text-gray-500"
+                    >Valor multiplicado pelos dias de aluguel</span
+                  >
+                </span>
+              </mat-radio-button>
+            </mat-radio-group>
+          </div>
+        </mat-card-content>
+
+        <mat-card-actions align="end" class="flex items-center justify-end gap-3 pt-4">
+          <a mat-stroked-button routerLink="/taxas-servicos" class="px-4"> Cancelar </a>
+
+          <button type="submit" [disabled]="taxaServicoForm.invalid" mat-flat-button class="px-6">
+            <mat-icon class="!text-base mr-1">check</mat-icon>
+            Gravar
+          </button>
+        </mat-card-actions>
+      </form>
+    </mat-card>
+  </div>
+</section>

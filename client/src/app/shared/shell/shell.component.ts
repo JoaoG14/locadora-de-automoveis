@@ -60,6 +60,11 @@ export class ShellComponent {
       icone: 'request_quote',
       link: '/planos-cobranca',
     },
+    {
+      titulo: 'Taxas e Serviços',
+      icone: 'local_offer',
+      link: '/taxas-servicos',
+    },
   ];
 
   @Input({ required: true }) usuarioAutenticado?: UsuarioAutenticadoModel;

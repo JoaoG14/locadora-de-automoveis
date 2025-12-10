@@ -1,0 +1,77 @@
+<section class="mx-auto max-w-screen-xl px-4">
+  <div class="py-6">
+    <h2 class="text-2xl font-semibold">Taxas e Serviços</h2>
+
+    <!-- Ações -->
+    <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-6 gap-2">
+      <a
+        mat-flat-button
+        class="col-span-1 flex items-center justify-center gap-2 h-10"
+        routerLink="../cadastrar"
+      >
+        <mat-icon class="!text-base">add</mat-icon>
+        Cadastrar
+      </a>
+    </div>
+
+    <hr class="my-6 border-muted/30" />
+
+    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+      @for (taxaServico of taxasServicos$ | async; track taxaServico.id) {
+        <mat-card class="p-3 rounded-2xl shadow-sm">
+          <mat-card-header class="pb-2">
+            <mat-card-title class="text-lg font-medium flex items-center justify-between">
+              <span>{{ taxaServico.nome }}</span>
+              @if (taxaServico.precoFixo) {
+                <mat-chip class="!bg-blue-100 !text-blue-800 !text-xs !h-6">
+                  <mat-icon class="!text-sm mr-1">attach_money</mat-icon>
+                  Preço Fixo
+                </mat-chip>
+              } @else {
+                <mat-chip class="!bg-green-100 !text-green-800 !text-xs !h-6">
+                  <mat-icon class="!text-sm mr-1">calendar_today</mat-icon>
+                  Por Dia
+                </mat-chip>
+              }
+            </mat-card-title>
+          </mat-card-header>
+
+          <mat-card-content class="min-h-[40px] mt-3">
+            <div class="flex items-center justify-between">
+              <span class="text-gray-500 text-sm">Preço:</span>
+              <span class="text-xl font-semibold text-primary">
+                {{ taxaServico.preco | currency: 'BRL' }}
+              </span>
+            </div>
+            <div class="mt-2 text-xs text-gray-500">
+              @if (taxaServico.precoFixo) {
+                <p>Valor único cobrado independente do período</p>
+              } @else {
+                <p>Valor cobrado por dia de aluguel</p>
+              }
+            </div>
+          </mat-card-content>
+
+          <mat-card-actions align="end" class="flex items-center justify-end gap-2 pt-2">
+            <a [routerLink]="['../editar', taxaServico.id]" mat-icon-button aria-label="Editar">
+              <mat-icon>edit</mat-icon>
+            </a>
+            <a [routerLink]="['../excluir', taxaServico.id]" mat-icon-button aria-label="Excluir">
+              <mat-icon>delete</mat-icon>
+            </a>
+          </mat-card-actions>
+        </mat-card>
+      } @empty {
+        <div
+          class="col-span-full text-center py-12 text-gray-500 bg-gray-50 rounded-lg dashed border-2 border-gray-200"
+        >
+          <mat-icon class="text-5xl mb-2 opacity-30">folder_off</mat-icon>
+          <p class="text-lg">Nenhuma taxa ou serviço cadastrado.</p>
+          <a mat-button color="primary" routerLink="../cadastrar" class="mt-2">
+            Cadastre o primeiro
+          </a>
+        </div>
+      }
+    </div>
+  </div>
+</section>
